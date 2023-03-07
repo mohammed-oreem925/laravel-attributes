@@ -47,7 +47,7 @@ class AttributesServiceProvider extends ServiceProvider
         });
 
         // Register console commands
-        $this->commands($this->commands);
+        // $this->registerCommands($this->commands);
     }
 
     /**
