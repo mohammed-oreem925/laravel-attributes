@@ -30,10 +30,10 @@ class AddAttributeValueIndexes extends Migration
         Schema::table(config('rinvex.attributes.tables.attribute_text_values'), function (Blueprint $table) {
             $table->index(['attribute_id', 'entity_id', 'entity_type'], 'attribute_text_values_index');
         });
-        Schema::table(config('rinvex.attributes.tables.attribute_varchar_values'), function (Blueprint $table) {
-            $table->index(['attribute_id', 'entity_id', 'entity_type'], 'attribute_varchar_values_index');
-            $table->index(['content']);
-        });
+//         Schema::table(config('rinvex.attributes.tables.attribute_varchar_values'), function (Blueprint $table) {
+//             $table->index(['attribute_id', 'entity_id', 'entity_type'], 'attribute_varchar_values_index');
+//             $table->index(['content']);
+//         });
     }
 
     /**
@@ -58,9 +58,9 @@ class AddAttributeValueIndexes extends Migration
         Schema::table(config('rinvex.attributes.tables.attribute_text_values'), function (Blueprint $table) {
             $table->dropIndex('attribute_text_values_index');
         });
-        Schema::table(config('rinvex.attributes.tables.attribute_varchar_values'), function (Blueprint $table) {
-            $table->dropIndex('attribute_varchar_values_index');
-            $table->dropIndex(['content']);
-        });
+//         Schema::table(config('rinvex.attributes.tables.attribute_varchar_values'), function (Blueprint $table) {
+//             $table->dropIndex('attribute_varchar_values_index');
+//             $table->dropIndex(['content']);
+//         });
     }
 }
